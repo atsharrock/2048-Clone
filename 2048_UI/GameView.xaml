@@ -1,0 +1,82 @@
+﻿<Window x:Class="_2048_UI.GameView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_2048_UI"
+        mc:Ignorable="d"
+        Title="2048" Height="550" Width="800">
+
+	<StackPanel>
+		<StackPanel.Resources>
+			<Style x:Key="notCalledBorder" TargetType="{x:Type Border}">
+				<Setter Property="BorderThickness" Value="1" />
+				<Setter Property="BorderBrush" Value="Black" />
+			</Style>
+		</StackPanel.Resources>
+		<TextBlock Text="Score:"></TextBlock>
+		<TextBlock Text="{Binding Points}" Name="Score"></TextBlock>
+	
+		<Grid VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2,2,2,2">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="auto"/>
+				<ColumnDefinition Width="auto"/>
+				<ColumnDefinition Width="auto"/>
+				<ColumnDefinition Width="auto"/>
+			</Grid.ColumnDefinitions>
+			
+			<Grid.RowDefinitions>
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="auto"/>
+			</Grid.RowDefinitions>
+
+
+			<Label Content="{Binding RowA[0].Number}" Grid.Row="0" Grid.Column="0" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="2" Width="80" Height="80"/>
+			<Label Content="{Binding RowA[1].Number}" Grid.Row="0" Grid.Column="1" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="2" Width="80" Height="80"/>
+			<Label Content="{Binding RowA[2].Number}" Grid.Row="0" Grid.Column="2" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="2" Width="80" Height="80"/>
+			<Label Content="{Binding RowA[3].Number}" Grid.Row="0" Grid.Column="3" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="2" Width="80" Height="80"/>
+
+			<Label Content="{Binding RowB[0].Number}" Grid.Row="1" Grid.Column="0" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="2" Width="80" Height="80"/>
+			<Label Content="{Binding RowB[1].Number}" Grid.Row="1" Grid.Column="1" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="2" Width="80" Height="80"/>
+			<Label Content="{Binding RowB[2].Number}" Grid.Row="1" Grid.Column="2" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="2" Width="80" Height="80"/>
+			<Label Content="{Binding RowB[3].Number}" Grid.Row="1" Grid.Column="3" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="2" Width="80" Height="80"/>
+
+			<Label Content="{Binding RowC[0].Number}" Grid.Row="2" Grid.Column="0" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="2" Width="80" Height="80"/>
+			<Label Content="{Binding RowC[1].Number}" Grid.Row="2" Grid.Column="1" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="2" Width="80" Height="80"/>
+			<Label Content="{Binding RowC[2].Number}" Grid.Row="2" Grid.Column="2" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="2" Width="80" Height="80"/>
+			<Label Content="{Binding RowC[3].Number}" Grid.Row="2" Grid.Column="3" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="2" Width="80" Height="80"/>
+
+			<Label Content="{Binding RowD[0].Number}" Grid.Row="3" Grid.Column="0" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="2" Width="80" Height="80"/>
+			<Label Content="{Binding RowD[1].Number}" Grid.Row="3" Grid.Column="1" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="2" Width="80" Height="80"/>
+			<Label Content="{Binding RowD[2].Number}" Grid.Row="3" Grid.Column="2" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="2" Width="80" Height="80"/>
+			<Label Content="{Binding RowD[3].Number}" Grid.Row="3" Grid.Column="3" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" BorderThickness="2" Width="80" Height="80"/>
+			
+
+		</Grid>
+
+		<Grid VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2,2,2,2">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="50"/>
+				<ColumnDefinition Width="50"/>
+				<ColumnDefinition Width="50"/>
+			</Grid.ColumnDefinitions>
+
+			<Grid.RowDefinitions>
+				<RowDefinition Height="50"/>
+				<RowDefinition Height="50"/>
+				<RowDefinition Height="50"/>
+
+			</Grid.RowDefinitions>
+
+			<Button Grid.Row="0" Grid.Column="1" Name="UpButton" Click="UpButton_Click">UP</Button>
+			<Button Grid.Row="1" Grid.Column="0" Name="LeftButton" Click="LeftButton_Click">Left</Button>
+			<Button Grid.Row="1" Grid.Column="3" Name="RightButton" Click="RightButton_Click">Right</Button>
+			<Button Grid.Row="3" Grid.Column="1" Name="DownButton" Click="DownButton_Click">Down</Button>
+		</Grid>
+	</StackPanel>
+
+
+
+</Window>
